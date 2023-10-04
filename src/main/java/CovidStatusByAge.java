@@ -1,18 +1,23 @@
 import java.util.ArrayList;
 
-public class CovidStatus {
+public class CovidStatusByAge {
   private String ageRange;
-  private ArrayList<Integer> positives;
-  private int sum;
+  private int confirmed;
+  private double confirmedRate;
+  private int dead;
+  private double deadRate;
+  private double fatalityRate;
 
-  public CovidStatus() {
-    positives = new ArrayList<>();
+  public CovidStatusByAge() {
   }
 
-  public CovidStatus(String ageRange, ArrayList<Integer> positives, int sum) {
+  public CovidStatusByAge(String ageRange, int confirmed, double confirmedRate, int dead, double deadRate, double fatalityRate) {
     this.ageRange = ageRange;
-    this.positives = positives;
-    this.sum = sum;
+    this.confirmed = confirmed;
+    this.confirmedRate = confirmedRate;
+    this.dead = dead;
+    this.deadRate = deadRate;
+    this.fatalityRate = fatalityRate;
   }
 
   public String getAgeRange() {
@@ -23,28 +28,54 @@ public class CovidStatus {
     this.ageRange = ageRange;
   }
 
-  public ArrayList<Integer> getPositives() {
-    return positives;
+  public int getConfirmed() {
+    return confirmed;
   }
 
-  public void addPositives(Integer positive) {
-    this.positives.add(positive);
+  public void setConfirmed(int confirmed) {
+    this.confirmed = confirmed;
   }
 
-  public int getSum() {
-    return sum;
+  public double getConfirmedRate() {
+    return confirmedRate;
   }
 
-  public void setSum(int sum) {
-    this.sum = sum;
+  public void setConfirmedRate(double confirmedRate) {
+    this.confirmedRate = confirmedRate;
+  }
+
+  public int getDead() {
+    return dead;
+  }
+
+  public void setDead(int dead) {
+    this.dead = dead;
+  }
+
+  public double getDeadRate() {
+    return deadRate;
+  }
+
+  public void setDeadRate(double deadRate) {
+    this.deadRate = deadRate;
+  }
+
+  public double getFatalityRate() {
+    return fatalityRate;
+  }
+
+  public void setFatalityRate(double fatalityRate) {
+    this.fatalityRate = fatalityRate;
   }
 
   @Override
   public String toString() {
-    return "CovidStatus{" +
-            "ageRange='" + ageRange + '\'' +
-            ", positives=" + positives +
-            ", sum=" + sum +
+    return  "{연령대: " + ageRange +
+            ", 확진자: " + confirmed +
+            ", 확진율: " + confirmedRate +
+            ", 사망자: " + dead +
+            ", 사망률: " + deadRate +
+            ", 치명률: " + fatalityRate +
             '}';
   }
 }
