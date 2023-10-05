@@ -24,11 +24,7 @@ public class CovidStatusClassTest {
             saveDataFromWeb(controller, rows);
             ArrayList<String> colNames = getColNames(rows.get(0));
 
-
-            // ToDo: .xlsx로 출력 해주는 메소드 호출
             ExcelExporter.exportToExel(controller.getCovidStatusAgeList(), colNames, "통계.xlsx");
-
-            // ToDo: PDF로 출력 해주는 메소드 호출
             PdfExporter.exportToPdf(controller.getCovidStatusAgeList(), colNames, "통계.pdf");
 
         }catch(IOException e){
