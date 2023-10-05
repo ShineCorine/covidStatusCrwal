@@ -7,7 +7,7 @@ public class CovidStatusController {
     this.covidStatusAgeList=new ArrayList<>();
   }
 
-  public ArrayList<CovidStatusByAge> getStatusAgeRanges() {
+  public ArrayList<CovidStatusByAge> getCovidStatusAgeList() {
     return covidStatusAgeList;
   }
 
